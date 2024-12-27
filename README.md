@@ -13,66 +13,78 @@ Cuối cùng, người dùng chọn dịch vụ khám mong muốn và hoàn tấ
 
 
 ## Thiết kế cơ sở dữ liệu
+
 ### BENHVIEN (Hospital)
-*   **mabenhvien** (Hospital ID): Variable characters (10), Primary Key, Mandatory
-*   tenbenhvien (Hospital Name): Variable characters (50)
+*   **mabenhvien** (Hospital ID): varchar(10) `<pk>`
+*   tenbenhvien (Hospital Name): varchar(50)
 
 ### CHUYENKHOA (Specialty)
-*   **machuyenkhoa** (Specialty ID): Variable characters (10), Primary Key, Mandatory
-*   tenchuyenkhoa (Specialty Name): Variable characters (50)
+*   **machuyenkhoa** (Specialty ID): varchar(10) `<pk>`
+*   tenchuyenkhoa (Specialty Name): varchar(50)
 
 ### BENHNHAN (Patient)
-*   **mabenhnhan** (Patient ID): Variable characters (10), Primary Key, Mandatory
-*   tenbenhnhan (Patient Name): Variable characters (50)
-*   gioitinh (Gender): Variable characters (5)
-*   sdt (Phone Number): Characters (10)
-*   email (Email): Characters (50)
-*   ngaysinh (Date of Birth): Date
-*   diachi (Address): Variable characters (100)
+*   **mabenhnhan** (Patient ID): varchar(10) `<pk>`
+*   tenbenhnhan (Patient Name): varchar(50)
+*   gioitinh (Gender): varchar(5)
+*   sdt (Phone Number): char(10)
+*   email (Email): char(50)
+*   ngaysinh (Date of Birth): datetime
+*   diachi (Address): varchar(100)
 
 ### BACSI (Doctor)
-*   **mabacsi** (Doctor ID): Variable characters (10), Primary Key, Mandatory
-*   tenbacsi (Doctor Name): Variable characters (50)
-*   namkinhnghiem (Years of Experience): Integer
-*   gioithieu (Introduction): Text
+*   **mabacsi** (Doctor ID): varchar(10) `<pk>`
+*   mahv (Degree ID): varchar(10) `<fk3>`
+*   mabenhvien (Hospital ID): varchar(10) `<fk4>`
+*   mahh (Academic Title ID): varchar(10) `<fk2>`
+*   machuyenkhoa (Specialty ID): varchar(10) `<fk1>`
+*   tenbacsi (Doctor Name): varchar(50)
+*   namkinhnghiem (Years of Experience): int
+*   gioithieu (Introduction): text
 
 ### HOCHAM (Academic Title)
-*   **mahh** (Academic Title ID): Variable characters (10), Primary Key, Mandatory
-*   tenhh (Academic Title Name): Variable characters (50)
+*   **mahh** (Academic Title ID): varchar(10) `<pk>`
+*   tenhh (Academic Title Name): varchar(50)
 
 ### HOCVI (Degree)
-*   **mahy** (Degree ID): Variable characters (10), Primary Key, Mandatory
-*   tenhv (Degree Name): Variable characters (50)
+*   **mahv** (Degree ID): varchar(10) `<pk>`
+*   tenhv (Degree Name): varchar(50)
 
 ### DICHVU (Service)
-*   **madichvu** (Service ID): Variable characters (10), Primary Key, Mandatory
-*   tendichvu (Service Name): Variable characters (50)
+*   **madichvu** (Service ID): varchar(10) `<pk>`
+*   tendichvu (Service Name): varchar(50)
 
 ### PHONGKHAM (Clinic/Room)
-*   **maphongkham** (Clinic ID): Variable characters (10), Primary Key, Mandatory
-*   tenphongkham (Clinic Name): Variable characters (50)
-*   vitri (Location): Variable characters (50)
-
-### LICHKHAM (Appointment)
-*    **malich** (Appointment ID): Variable characters (10), Primary Key, Mandatory
-*    ngay (Date): Date
-*    giobatdau (Start Time): Time
-*    gioketthuc (End Time): Time
+*   **maphongkham** (Clinic ID): varchar(10) `<pk>`
+*   tenphongkham (Clinic Name): varchar(50)
+*   vitri (Location): varchar(50)
 
 ### DANGKY (Registration)
-*    **madangky** (Registration ID): Variable characters (10), Primary Key, Mandatory
+*    **madangky** (Registration ID): varchar(10) `<pk>`
+*    malich (Appointment ID): varchar(10) `<fk2>`
+*   mabenhnhan (Patient ID): varchar(10) `<fk3>`
+*   madichvu (Service ID): varchar(10) `<fk4>`
+*   mabacsi (Doctor ID): varchar(10) `<fk1>`
 
-### Relationships
+### LICHKHAM (Appointment)
+*   **malich** (Appointment ID): varchar(10) `<pk>`
+*   maphongkham (Clinic ID): varchar(10) `<fk>`
+*   ngay (Date): datetime
+*   giobatdau (Start Time): datetime
+*   gioketthuc (End Time): datetime
 
-*   **BENHVIEN** 1,n - GOM (Contains)
-*   **CHUYENKHOA** 1,n - THUOC (Belongs To)
-*   **BENHNHAN** 1,n - DANGKY (Registers)
-*    **BACSI** 1,1 - DAT (Has)
-*    **BACSI** 1,n - KHAM (Examines)
-*  **HOCHAM** 1,n - DAT (Has)
-* **HOCVI** 1,n - CO (Has)
-* **LICHKHAM** 1,1 - CUA (Of)
-* **PHONGKHAM** 1,1 - O (At)
-*   **DANGKY** 1,1 - CUA (Of)
-*  **DICHVU** 1,n - SU_DUNG (Uses)
-*  **DANGKY** 1,1 - SU_DUNG (Uses)
+### Ký hiệu
+*   Khóa chính được ký hiệu bằng `<pk>`
+*   Khóa ngoại được ký hiệu bằng `<fk#>` ký hiệu # để chỉ khóa ngoại không được trùng lập trong bảng
+
+## Cài đặt và thêm dữ liệu
+### Tạo cơ sở dữ liệu
+```sql
+CREATE DATABASE CSN_DKKB;
+USE CSN_DKKB;
+-- Thực thi các lệnh tạo bảng và các ràng buộc như trong file `DB_DKKB.sql`
+```
+## Kiểm thử
+###Quá trình nghiên cứu và thiết kế cơ sở dữ liệu cho hệ thống đặt lịch khám trực tuyến đã đạt được những kết quả đáng kể:
+
+*   **Xây dựng thành công một cấu trúc cơ sở dữ liệu:** Đáp ứng được các yêu cầu cơ bản của một hệ thống đặt lịch khám trực tuyến, bao gồm quản lý thông tin bệnh nhân, bác sĩ, lịch khám, và các thông tin liên quan khác.
+*   **Đảm bảo tính toàn vẹn và bảo mật dữ liệu:** Các ràng buộc và cơ chế bảo mật đã được thiết lập để bảo vệ thông tin cá nhân của bệnh nhân và đảm bảo tính chính xác của dữ liệu.
