@@ -1,7 +1,5 @@
 # ĐỒ ÁN CƠ SỞ NGÀNH: THIẾT KẾ CƠ SỞ DỮ LIỆU CHO HỆ THỐNG ĐẶT LỊCH TRỰC TUYẾN TẠI MỘT SỐ BỆNH VIỆN
       Giáo viên hướng dẫn : Phan Thị Phương Nam
-
-      
       Sinh viên thực hiện: Nguyễn Văn Tổng
 # CÁC BƯỚC THỰC HIỆN
 ## Mô tả bài toán
@@ -84,7 +82,7 @@ USE CSN_DKKB;
 -- Thực thi các lệnh tạo bảng và các ràng buộc như trong file `DB_DKKB.sql`
 ```
 ## Kiểm thử
-###Quá trình nghiên cứu và thiết kế cơ sở dữ liệu cho hệ thống đặt lịch khám trực tuyến đã đạt được những kết quả đáng kể:
+### Quá trình nghiên cứu và thiết kế cơ sở dữ liệu cho hệ thống đặt lịch khám trực tuyến đã đạt được những kết quả đáng kể:
 
 *   **Xây dựng thành công một cấu trúc cơ sở dữ liệu:** Đáp ứng được các yêu cầu cơ bản của một hệ thống đặt lịch khám trực tuyến, bao gồm quản lý thông tin bệnh nhân, bác sĩ, lịch khám, và các thông tin liên quan khác.
 *   **Đảm bảo tính toàn vẹn và bảo mật dữ liệu:** Các ràng buộc và cơ chế bảo mật đã được thiết lập để bảo vệ thông tin cá nhân của bệnh nhân và đảm bảo tính chính xác của dữ liệu.
