@@ -86,3 +86,7 @@ USE CSN_DKKB;
 
 *   **Xây dựng thành công một cấu trúc cơ sở dữ liệu:** Đáp ứng được các yêu cầu cơ bản của một hệ thống đặt lịch khám trực tuyến, bao gồm quản lý thông tin bệnh nhân, bác sĩ, lịch khám, và các thông tin liên quan khác.
 *   **Đảm bảo tính toàn vẹn và bảo mật dữ liệu:** Các ràng buộc và cơ chế bảo mật đã được thiết lập để bảo vệ thông tin cá nhân của bệnh nhân và đảm bảo tính chính xác của dữ liệu.
+## Thông tin liên hệ
+*   Số điện thoại: 0383778804
+*   Email: 110122188@st.tvu.edu.vn
+  
