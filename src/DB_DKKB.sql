@@ -443,15 +443,7 @@ BEGIN
 END
 sp_countDKbyNam_CK 2024
 
---hien thi bs truc buoi nao 
---them ck vao dk 
---them 10 bs 
 
-
-	select a.tenbacsi,   d.tenhocvi, e.tenchuyenkhoa, c.tenhocham ,b.tenbenhvien, a.namkinhnghiem, a.gioithieu, h.ngay, h.giobatdau, h.gioketthuc, g.tenphongkham 
-	from bacsi a, benhvien b, hocham c, hocvi d, chuyenkhoa e, dangky f, phongkham g, lichkham h
-	where a.mabenhvien = b.mabenhvien and a.mahocham = c.mahocham and a.machuyenkhoa = e.machuyenkhoa and a.mahocvi = d.mahocvi and a.mabacsi = f.mabacsi
-	and f.malich = h.malich and h.maphongkham = g.maphongkham
 	
 
 select * from bacsi
@@ -464,20 +456,9 @@ sp_getBSbymaCK 'ck01'
 
 sp_getBSbymaBV 'bv01'
 
+sp_countDKbyNgay_CK '2024-11-19'
 
-select mabacsi as 'Mã bác sĩ', tenbacsi as 'Tên bác sĩ', gioithieu as 'Giới thiệu', namkinhnghiem as 'Năm kinh nghiệm', machuyenkhoa as 'Mã chuyên khoa', mabenhvien as 'Mã bệnh viện', mahocham as 'Mã học hàm', mahocvi as 'Mã học vị'
-from bacsi
+sp_countDKbyThang_CK 11, 2024
 
+sp_countDKbyNam_CK 2024
 
-select mabenhnhan  as 'Mã bệnh nhân', tenbenhnhan as 'Tên bệnh nhân', gioitinh as 'Giới tính', sdt as 'Số điện thoại', email as 'Email', ngaysinh as 'Ngày sinh', diachi as 'Địa chỉ' 
-from benhnhan
-
-select madangky as 'Mã đăng ký', mabacsi as 'Mã bác sĩ', mabenhnhan as 'Mã bệnh nhân', malich as 'Mã lịch khám', madichvu as 'Mã dịch vụ'
-from dangky
-
-
-
-
-	select count(a.madangky)
-	from DANGKY a, LICHKHAM b, BACSI c
-	where  a.malich = b.malich and a.mabacsi = c.mabacsi and b.ngay = '2024-11-19'
