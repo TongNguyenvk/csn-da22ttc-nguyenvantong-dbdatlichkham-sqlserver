@@ -72,7 +72,7 @@ Cuối cùng, người dùng chọn dịch vụ khám mong muốn và hoàn tấ
 
 ### Ký hiệu
 *   Khóa chính được ký hiệu bằng `<pk>`
-*   Khóa ngoại được ký hiệu bằng `<fk#>` ký hiệu # để chỉ khóa ngoại không được trùng lập trong bảng
+*   Khóa ngoại được ký hiệu bằng `<fk>` 
 
 ## Cài đặt và thêm dữ liệu
 ### Tạo cơ sở dữ liệu
