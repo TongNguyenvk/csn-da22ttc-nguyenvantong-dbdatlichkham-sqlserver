@@ -1,4 +1,4 @@
-# ĐỒ ÁN CƠ SỞ NGÀNH: # THIẾT KẾ CƠ SỞ DỮ LIỆU CHO HỆ THỐNG ĐẶT LỊCH TRỰC TUYẾN TẠI MỘT SỐ BỆNH VIỆN
+# ĐỒ ÁN CƠ SỞ NGÀNH: THIẾT KẾ CƠ SỞ DỮ LIỆU CHO HỆ THỐNG ĐẶT LỊCH TRỰC TUYẾN TẠI MỘT SỐ BỆNH VIỆN
       Giáo viên hướng dẫn : Phan Thị Phương Nam
       Sinh viên thực hiện: Nguyễn Văn Tổng
 # CÁC BƯỚC THỰC HIỆN
