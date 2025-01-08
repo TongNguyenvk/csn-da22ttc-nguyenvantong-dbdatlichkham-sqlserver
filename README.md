@@ -79,7 +79,7 @@ Cuối cùng, người dùng chọn dịch vụ khám mong muốn và hoàn tấ
 ```sql
 CREATE DATABASE CSN_DKKB;
 USE CSN_DKKB;
--- Thực thi các lệnh tạo bảng và các ràng buộc như trong file `DB_DKKB.sql`
+-- Thực thi các lệnh tạo bảng và các ràng buộc như trong file `src/DB_DKKB.sql`
 ```
 ## Kiểm thử
 ### Quá trình nghiên cứu và thiết kế cơ sở dữ liệu cho hệ thống đặt lịch khám trực tuyến đã đạt được những kết quả đáng kể:
